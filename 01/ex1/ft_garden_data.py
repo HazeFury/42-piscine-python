@@ -1,10 +1,13 @@
 class Plant():
+    """Represent a plant object."""
     def __init__(self, name: str, height: int, age: int) -> None:
+        """Initialize data for new object."""
         self.name = name
         self.height = height
         self.age = age
 
     def display_data(self) -> None:
+        """Show all data of this plant."""
         print(f"{self.name}: {self.height}cm, {self.age} days old")
 
 
