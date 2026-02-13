@@ -1,4 +1,4 @@
-from typing import TypedDict, List
+from typing import TypedDict
 
 
 class PlantType(TypedDict):
@@ -23,7 +23,7 @@ class Plant():
 
 class PlantFactory():
     @staticmethod
-    def create_plants(plant_array: List[PlantType]) -> list[Plant]:
+    def create_plants(plant_array: list[PlantType]) -> list[Plant]:
         """Creates multiple Plant objects from a list of dictionaries."""
         garden = []
         for plant in plant_array:
@@ -35,7 +35,7 @@ class PlantFactory():
 
 
 def main() -> None:
-    plants_to_create: List[PlantType] = [
+    plants_to_create: list[PlantType] = [
         {"name": "Rose", "height": 25, "age": 30},
         {"name": "Oak", "height": 200, "age": 365},
         {"name": "Cactus", "height": 5, "age": 90},
