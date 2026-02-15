@@ -22,20 +22,20 @@ ___
 ![My Skills](https://skillicons.dev/icons?i=python) 
 
 
-| Name | Theme | Bonus | Score |
-| :--- | :---: | :---: | :---: |
-| Module 00 : | Discover Python's syntax and key concept | ❌ | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
-| Module 01 : | (Coming soon) | ❌ | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
-| Module 02 : | (Coming soon) | ❌ | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
-| Module 03 : | (Coming soon) | ❌ | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
-| Module 04 : | (Coming soon) | ❌ | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
-| Module 05 : | (Coming soon) | ❌ | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
-| Module 06 : | (Coming soon) | ❌ | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
-| Module 07 : | (Coming soon) | ❌ | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
-| Module 08 : | (Coming soon) | ❌ | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
-| Module 09 : | (Coming soon) | ❌ | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
-| Module 10 : | (Coming soon) | ❌ | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
-| Module 11 : | (Coming soon) | ❌ | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
+| Name | Theme | Score |
+| :--- | :---: | :---: |
+| Module 00 : | Discover Python's syntax and key concept | ![Grade](https://img.shields.io/badge/Grade-100%2F100-brightgreen) |
+| Module 01 : | (Coming soon) | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
+| Module 02 : | (Coming soon) | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
+| Module 03 : | (Coming soon) | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
+| Module 04 : | (Coming soon) | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
+| Module 05 : | (Coming soon) | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
+| Module 06 : | (Coming soon) | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
+| Module 07 : | (Coming soon) | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
+| Module 08 : | (Coming soon) | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
+| Module 09 : | (Coming soon) | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
+| Module 10 : | (Coming soon) | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
+| Module 11 : | (Coming soon) | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
 
   <br>
 </div>
