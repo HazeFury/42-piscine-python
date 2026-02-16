@@ -22,8 +22,7 @@ class Plant():
 
 
 class PlantFactory():
-    @staticmethod
-    def create_plants(plant_array: list[PlantType]) -> list[Plant]:
+    def create_plants(self, plant_array: list[PlantType]) -> list[Plant]:
         """Creates multiple Plant objects from a list of dictionaries."""
         garden = []
         for plant in plant_array:
@@ -42,7 +41,8 @@ def main() -> None:
         {"name": "Sunflower", "height": 80, "age": 45},
         {"name": "Fern", "height": 15, "age": 120}]
 
-    my_garden = PlantFactory.create_plants(plants_to_create)
+    factory = PlantFactory()
+    my_garden = factory.create_plants(plants_to_create)
 
     print("\n=== My Garden ===")
     for each_plant in my_garden:
