@@ -4,6 +4,7 @@ class Plant:
         self.name = name
         self.height = height
         self._growth = 0  # Pour tracker la croissance totale
+        self.type = "regular"
 
     def grow(self, cm):
         self.height += cm
@@ -19,6 +20,7 @@ class FloweringPlant(Plant):
     def __init__(self, name, height, color):
         super().__init__(name, height)
         self.color = color
+        self.type = "flowering"
 
     def __str__(self):
         return f"{super().__str__()}, {self.color} flowers (blooming)"
@@ -29,6 +31,7 @@ class PrizeFlower(FloweringPlant):
     def __init__(self, name, height, color, points):
         super().__init__(name, height, color)
         self.points = points
+        self.type = "prize"
 
     def __str__(self):
         return f"{super().__str__()}, Prize points: {self.points}"
@@ -49,10 +52,10 @@ class GardenManager:
             for p in plants:
                 score += p.height
                 # Bonus pour les plantes à fleurs
-                if isinstance(p, FloweringPlant):
+                if p.type == "flowering":
                     score += 20
                 # Bonus pour les plantes à prix
-                if isinstance(p, PrizeFlower):
+                if p.type == "prize":
                     score += p.points
             return score
 
@@ -60,12 +63,11 @@ class GardenManager:
             """Return specific counts of each type (Strict type check)."""
             counts = {"regular": 0, "flowering": 0, "prize": 0}
             for p in plants:
-                # On utilise type() is ... pour éviter de compter un Prize comme un Flowering
-                if type(p) is Plant:
+                if p.type == "regular":
                     counts["regular"] += 1
-                elif type(p) is FloweringPlant:
+                elif p.type == "flowering":
                     counts["flowering"] += 1
-                elif type(p) is PrizeFlower:
+                elif p.type == "prize":
                     counts["prize"] += 1
             return counts
 
