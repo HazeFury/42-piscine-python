@@ -24,8 +24,8 @@ ___
 
 | Name | Theme | Score |
 | :--- | :---: | :---: |
-| Module 00 : | Discover Python's syntax and key concept | ![Grade](https://img.shields.io/badge/Grade-100%2F100-brightgreen) |
-| Module 01 : | (Coming soon) | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
+| Module 00 : | Basic Python's syntax | ![Grade](https://img.shields.io/badge/Grade-100%2F100-brightgreen) |
+| Module 01 : | Object Oriented Programming (OOP) basics | ![Grade](https://img.shields.io/badge/Grade-100%2F100-brightgreen) |
 | Module 02 : | (Coming soon) | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
 | Module 03 : | (Coming soon) | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
 | Module 04 : | (Coming soon) | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
