@@ -1,4 +1,5 @@
 def check_temperature(temp_str: str) -> int | None:
+    """Check temperature received in arg and returns it as int if valid."""
     print(f"Testing temperature: {temp_str}")
     try:
         temp_int = int(temp_str)
@@ -16,6 +17,7 @@ def check_temperature(temp_str: str) -> int | None:
 
 
 def test_temperature_input() -> None:
+    """Test the 'check_temperature()' function with differents values."""
     try:
         print("=== Garden Temperature Checker ===\n")
         check_temperature("25")
