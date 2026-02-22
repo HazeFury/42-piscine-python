@@ -50,7 +50,7 @@ Le contrôle global : Tu utilises except GardenError: si tu veux juste dire "Il 
 
 - Le bloc finally sert de femme/homme de ménage : il ferme les fichiers, coupe les connexions réseau, éteint les systèmes. Mais il ne prend jamais de décision sur la suite du programme (pas de return, pas de break, pas de continue).
 
-## ex4
+### ex4
 
 - En Python, on lève une ValueError quand une fonction reçoit un argument qui a le bon type (ici un int pour l'eau), mais une valeur inappropriée (15 au lieu de 10 max). C'est sémantiquement la bonne erreur native à utiliser.
 
@@ -58,4 +58,18 @@ Le contrôle global : Tu utilises except GardenError: si tu veux juste dire "Il 
 
 - L'ordre des conditions : On vérifie de haut en bas. Au premier raise rencontré, la fonction check_plant_health s'arrête net. C'est comme un return, le code en dessous ne sera jamais lu. C'est pour ça qu'on n'a pas besoin de mettre des else partout.
 
+### ex5
 
+**"How do all these error handling techniques work together to make a robust garden program?"**
+
+C'est la complémentarité qui fait la force de ce code :
+
+- Le raise te permet d'être proactif. Tu n'attends pas que Python plante avec un obscur TypeError ; tu stoppes l'action toi-même dès que tu vois un nom de plante vide ou trop d'eau.
+
+- Le try/except te rend résilient. Au lieu que l'erreur ne fasse exploser l'application entière (et supprime potentiellement les données non sauvegardées), l'erreur est "absorbée", un message est affiché, et le programme passe à la suite sans broncher.
+
+- Le finally te rend propre. Même si une erreur insurmontable survient pendant l'arrosage, tu as la garantie mathématique que le robinet virtuel sera fermé, évitant une fuite de mémoire (ou d'eau !).
+
+**"What makes a program reliable when things go wrong?"**
+
+Un programme fiable en C vérifie chaque retour de fonction (if (res == -1)). Un programme fiable en Python laisse le code s'exprimer de manière fluide, mais place des filets de sécurité sémantiques (except ValueError, except GardenError). En séparant la logique nominale (le bloc try) de la logique d'erreur (les blocs except), le code devient beaucoup plus lisible. La fiabilité vient de la prévisibilité : tu sais exactement où les erreurs prévues vont atterrir.
