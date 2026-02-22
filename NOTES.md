@@ -49,3 +49,13 @@ Le contrôle global : Tu utilises except GardenError: si tu veux juste dire "Il 
 - Le mot-clé raise est ton meilleur ami pour contrôler le flux de tes exceptions.
 
 - Le bloc finally sert de femme/homme de ménage : il ferme les fichiers, coupe les connexions réseau, éteint les systèmes. Mais il ne prend jamais de décision sur la suite du programme (pas de return, pas de break, pas de continue).
+
+## ex4
+
+- En Python, on lève une ValueError quand une fonction reçoit un argument qui a le bon type (ici un int pour l'eau), mais une valeur inappropriée (15 au lieu de 10 max). C'est sémantiquement la bonne erreur native à utiliser.
+
+- La puissance de as e : Puisqu'on lève toujours la même erreur (ValueError), comment faire la différence à la réception ? C'est là que le message personnalisé entre en jeu. Quand tu fais raise ValueError("Mon message"), l'objet erreur embarque ce texte. Dans le except ValueError as e:, la variable e contient ce texte. On a juste à faire print(f"Error: {e}") et le bon message s'affiche automatiquement !
+
+- L'ordre des conditions : On vérifie de haut en bas. Au premier raise rencontré, la fonction check_plant_health s'arrête net. C'est comme un return, le code en dessous ne sera jamais lu. C'est pour ça qu'on n'a pas besoin de mettre des else partout.
+
+
