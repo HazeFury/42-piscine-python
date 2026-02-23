@@ -22,7 +22,7 @@ def water_plants(plant_list: list[str | None]) -> bool:
 
 def test_watering_system() -> None:
     """Test watering the plants with different arrays of plant."""
-    valid_plant_list: list[str] = ["tomato", "lettuce", "carrots"]
+    valid_plant_list: list[str | None] = ["tomato", "lettuce", "carrots"]
     invalid_plant_list: list[str | None] = ["tomato", None, "carrots"]
 
     print("=== Garden Watering System ===")

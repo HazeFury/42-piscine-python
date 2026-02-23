@@ -26,7 +26,7 @@ ___
 | :--- | :---: | :---: |
 | Module 00 : | Basic Python's syntax | ![Grade](https://img.shields.io/badge/Grade-100%2F100-brightgreen) |
 | Module 01 : | Object Oriented Programming (OOP) basics | ![Grade](https://img.shields.io/badge/Grade-100%2F100-brightgreen) |
-| Module 02 : | (Coming soon) | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
+| Module 02 : | Try / Except (Error handling) | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
 | Module 03 : | (Coming soon) | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
 | Module 04 : | (Coming soon) | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
 | Module 05 : | (Coming soon) | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |

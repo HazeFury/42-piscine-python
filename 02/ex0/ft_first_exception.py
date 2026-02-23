@@ -14,6 +14,7 @@ def check_temperature(temp_str: str) -> int | None:
     else:
         print(f"Temperature {temp_int}°C is perfect for plants!")
         return temp_int
+    return None
 
 
 def test_temperature_input() -> None:
