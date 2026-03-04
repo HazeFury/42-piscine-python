@@ -63,6 +63,7 @@ def main() -> None:
     treasures: int = 0
     level_ups: int = 0
 
+    # #########################  GAME LOOP  ##########################
     for event in events_gen:
         e_id: int = event[0]
         player_data: dict[str, str | int] = event[1]
@@ -84,6 +85,7 @@ def main() -> None:
         elif e_id == 4:
             print("...\n")
 
+    # ####################  Stream Analytics  #####################
     print("=== Stream Analytics ===")
     print(f"Total events processed: {e_id + 1}")
     print(f"High-level players (10+): {high_level}")
@@ -93,8 +95,8 @@ def main() -> None:
     print("Memory usage: Constant (streaming)")
     print("Processing time: 0.045 seconds\n")
 
+    # ################  Generator Demonstration #################
     print("=== Generator Demonstration ===")
-
     fib_gen = fibonacci_stream()
     fib_list: list[str] = []
     for _ in range(10):

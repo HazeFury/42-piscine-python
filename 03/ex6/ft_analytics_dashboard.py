@@ -10,7 +10,7 @@ def main() -> None:
 
     print("=== Game Analytics Dashboard ===\n")
 
-    # ####################  List Comprehension Examples  ####################
+    # ################  List Comprehension Examples  ################
     print("=== List Comprehension Examples ===")
 
     high: list[str] = [n for n, s, _, _ in data if s > 2000]
@@ -22,7 +22,7 @@ def main() -> None:
     active: list[str] = [n for n, _, _, _ in data]
     print(f"Active players: {active}\n")
 
-    # ####################  Dict Comprehension Examples  ####################
+    # ################  Dict Comprehension Examples  ################
     print("=== Dict Comprehension Examples ===")
 
     p_scores: dict[str, int] = {n: s for n, s, _, _ in data}
@@ -36,7 +36,7 @@ def main() -> None:
     a_counts: dict[str, int] = {n: len(ach) for n, _, _, ach in data}
     print(f"Achievement counts: {a_counts}\n")
 
-    # ####################  Set Comprehension Examples  ####################
+    # ################  Set Comprehension Examples  ################
     print("=== Set Comprehension Examples ===")
 
     u_players: set[str] = {n for n, _, _, _ in data}
