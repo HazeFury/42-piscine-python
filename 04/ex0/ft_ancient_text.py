@@ -1,7 +1,7 @@
 def main() -> None:
     """Recovers ancient text from the specified storage vault."""
 
-    vault_path: str = "./archives/ancient_fragment.txt"
+    vault_path: str = "../archives/ancient_fragment.txt"
 
     print("=== CYBER ARCHIVES - DATA RECOVERY SYSTEM ===\n")
     print("Accessing Storage Vault: ancient_fragment.txt")
