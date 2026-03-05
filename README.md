@@ -14,6 +14,7 @@ ___
 ![Language](https://img.shields.io/badge/Language-python-blue)
 ![Tag](https://img.shields.io/badge/Discovery-grey)
 ![Tag](https://img.shields.io/badge/OOP-grey)
+![Tag](https://img.shields.io/badge/Data-grey)
 
 <!-- ❌   ✅ -->
 
@@ -26,10 +27,10 @@ ___
 | :--- | :---: | :---: |
 | Module 00 : | Basic Python's syntax | ![Grade](https://img.shields.io/badge/Grade-100%2F100-brightgreen) |
 | Module 01 : | Object Oriented Programming (OOP) basics | ![Grade](https://img.shields.io/badge/Grade-100%2F100-brightgreen) |
-| Module 02 : | Try / Except (Error handling) | ![Grade](https://img.shields.io/badge/Grade-100%2F100-brightgreen) |
-| Module 03 : | Data structure, Generator and comprehension | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
-| Module 04 : | (Coming soon) | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
-| Module 05 : | (Coming soon) | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
+| Module 02 : | Error handling (Try / Except) | ![Grade](https://img.shields.io/badge/Grade-100%2F100-brightgreen) |
+| Module 03 : | Data structure (list, tuple, set, dict), Generator and comprehension | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
+| Module 04 : | File handling (open, read, write, with) | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
+| Module 05 : | Advanced OOP (polymorphism, method overriding, abstract class) | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
 | Module 06 : | (Coming soon) | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
 | Module 07 : | (Coming soon) | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
 | Module 08 : | (Coming soon) | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
