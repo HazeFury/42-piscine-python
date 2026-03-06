@@ -28,14 +28,15 @@ class NumericProcessor(DataProcessor):
     """Specialized processor for numeric arrays."""
 
     def __init__(self) -> None:
-        # Obligatoire selon l'énoncé : utilisation de super()
         super().__init__()
 
     def validate(self, data: Any) -> bool:
         if not isinstance(data, list):
             return False
-        # Vérifie que chaque élément de la liste est un int ou un float
-        return all(isinstance(x, (int, float)) for x in data)
+        for element in data:
+            if not isinstance(element, (int, float)):
+                return False
+        return True
 
     def process(self, data: Any) -> str:
         if not self.validate(data):
@@ -53,7 +54,7 @@ class TextProcessor(DataProcessor):
         super().__init__()
 
     def validate(self, data: Any) -> bool:
-        return isinstance(data, str) and not ":" in data
+        return isinstance(data, str) and ":" not in data
 
     def process(self, data: Any) -> str:
         if not self.validate(data):
@@ -71,7 +72,6 @@ class LogProcessor(DataProcessor):
         super().__init__()
 
     def validate(self, data: Any) -> bool:
-        # Un log est une string qui contient obligatoirement un deux-points
         return isinstance(data, str) and ":" in data
 
     def process(self, data: Any) -> str:
@@ -88,13 +88,14 @@ class LogProcessor(DataProcessor):
 
 def main() -> None:
     """Demonstrates polymorphic processing in the Code Nexus."""
-    print("CODE NEXUS DATA PROCESSOR FOUNDATION\n")
+    print("=== CODE NEXUS - DATA PROCESSOR FOUNDATION ===\n")
 
-    # --- TESTS INDIVIDUELS ---
+    # #######################  Numeric Processor  #######################
     print("Initializing Numeric Processor...")
     num_proc = NumericProcessor()
     num_data: List[int] = [1, 2, 3, 4, 5]
     print(f"Processing data: {num_data}")
+
     if num_proc.validate(num_data):
         print("Validation: Numeric data verified")
         try:
@@ -103,10 +104,12 @@ def main() -> None:
         except Exception as e:
             print(f"Error: {e}")
 
+    # ########################  Text Processor  ########################
     print("\nInitializing Text Processor...")
     text_proc = TextProcessor()
     text_data: str = "Hello Nexus World"
     print(f'Processing data: "{text_data}"')
+
     if text_proc.validate(text_data):
         print("Validation: Text data verified")
         try:
@@ -115,10 +118,12 @@ def main() -> None:
         except Exception as e:
             print(f"Error: {e}")
 
+    # ########################  Log Processor  ########################
     print("\nInitializing Log Processor...")
     log_proc = LogProcessor()
     log_data: str = "ERROR: Connection timeout"
     print(f'Processing data: "{log_data}"')
+
     if log_proc.validate(log_data):
         print("Validation: Log entry verified")
         try:
@@ -127,31 +132,39 @@ def main() -> None:
         except Exception as e:
             print(f"Error: {e}")
 
-    # --- LA MAGIE DU POLYMORPHISME ---
+    # ###################  Polymorphic Processing  ###################
     print("\n=== Polymorphic Processing Demo ===")
     print("Processing multiple data types through same interface....")
 
-    # On stocke nos objets enfants dans une liste typée avec le Parent !
     processors: List[DataProcessor] = [
+        LogProcessor(),
         NumericProcessor(),
-        TextProcessor(),
-        LogProcessor()
+        TextProcessor()
     ]
 
     inputs: List[Any] = [
         [1, 2, 3],
         "Hello Nexus",
-        "INFO: System ready"
+        "INFO: System ready",
+        ["42", "84"],
+        "toto is back"
     ]
 
-    # La boucle polymorphique parfaite
-    for i, (proc, data) in enumerate(zip(processors, inputs), 1):
-        try:
-            if proc.validate(data):
-                res: str = proc.process(data)
-                print(f"Result {i}: {res}")
-        except Exception as e:
-            print(f"Error on stream {i}: {e}")
+    for i, input in enumerate(inputs, 1):
+        processed = False
+
+        for proc in processors:
+            try:
+                if proc.validate(input):
+                    res: str = proc.process(input)
+                    print(f"Result {i}: {res}")
+                    processed = True
+                    break
+            except Exception as e:
+                print(f"Error on stream {i}: {e}")
+
+        if not processed:
+            print(f"WARNING on stream {i}: Unrecognized data format : {input}")
 
     print("\nFoundation systems online. Nexus ready for advanced streams.")
 
