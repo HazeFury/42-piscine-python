@@ -31,7 +31,7 @@ ___
 | Module 03 : | Data structure (list, tuple, set, dict), Generator and comprehension | ![Grade](https://img.shields.io/badge/Grade-100%2F100-brightgreen) |
 | Module 04 : | File handling (open, read, write, with) | ![Grade](https://img.shields.io/badge/Grade-100%2F100-brightgreen) |
 | Module 05 : | Advanced OOP (polymorphism, method overriding, abstract class) | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
-| Module 06 : | Modules import | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
+| Module 06 : | Python’s import system | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
 | Module 07 : | (Coming soon) | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
 | Module 08 : | (Coming soon) | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
 | Module 09 : | (Coming soon) | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
