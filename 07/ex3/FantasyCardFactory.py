@@ -4,7 +4,6 @@ from ex0.Card import Card
 from ex0.CreatureCard import CreatureCard
 from ex1.SpellCard import SpellCard
 from ex1.ArtifactCard import ArtifactCard
-from ex1.Deck import Deck
 
 
 class FantasyCardFactory(CardFactory):
@@ -13,11 +12,8 @@ class FantasyCardFactory(CardFactory):
     def create_creature(
         self, name_or_power: Union[str, int, None] = None
     ) -> Card:
-        # Si on demande un dragon ou une puissance de 5, on renvoie le boss
         if str(name_or_power).lower() == "dragon" or name_or_power == 5:
             return CreatureCard("Fire Dragon", 5, "Legendary", 7, 5)
-        # Sinon, par défaut, on renvoie une carte pas chère pour l'IA agressive
-        # On lui donne 5 d'attaque pour coller au calcul de dégâts du PDF !
         return CreatureCard("Goblin Warrior", 2, "Common", 5, 2)
 
     def create_spell(
@@ -34,13 +30,25 @@ class FantasyCardFactory(CardFactory):
             "Mana Ring", 2, "Rare", 3, "Permanent: +1 mana per turn"
         )
 
-    def create_themed_deck(self, size: int) -> Deck:
-        deck = Deck()
-        for _ in range(size // 3):
-            deck.add_card(self.create_creature("goblin"))
-            deck.add_card(self.create_spell())
-            deck.add_card(self.create_artifact())
-        return deck
+    def create_themed_deck(self, size: int) -> Dict[str, List[Card]]:
+        themed_deck = {
+            "creatures": [],
+            "spells": [],
+            "artifacts": []
+        }
+
+        cards_per_type = size // 3
+        remaining_cards = size % 3
+
+        for _ in range(cards_per_type):
+            themed_deck["creatures"].append(self.create_creature("goblin"))
+            themed_deck["spells"].append(self.create_spell())
+            themed_deck["artifacts"].append(self.create_artifact())
+
+        for _ in range(remaining_cards):
+            themed_deck["creatures"].append(self.create_creature("goblin"))
+
+        return themed_deck
 
     def get_supported_types(self) -> Dict[str, List[str]]:
         return {

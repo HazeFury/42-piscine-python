@@ -7,7 +7,6 @@ class GameEngine:
     """The main orchestrator of the card game."""
 
     def __init__(self) -> None:
-        # Au départ, le moteur n'a ni usine, ni intelligence !
         self.factory: Optional[CardFactory] = None
         self.strategy: Optional[GameStrategy] = None
 
@@ -15,7 +14,6 @@ class GameEngine:
         self.total_damage = 0
         self.cards_created = 0
 
-    # L'INJECTION DE DÉPENDANCES EST ICI
     def configure_engine(
         self, factory: CardFactory, strategy: GameStrategy
     ) -> None:
@@ -26,7 +24,6 @@ class GameEngine:
         if not self.factory or not self.strategy:
             raise ValueError("Engine is missing factory or strategy!")
 
-        # Le moteur sous-traite la création des cartes à l'Usine
         hand = [
             self.factory.create_creature("dragon"),
             self.factory.create_creature("goblin"),
@@ -35,7 +32,6 @@ class GameEngine:
         self.cards_created += 3
         battlefield: List[Any] = []
 
-        # Le moteur sous-traite la décision à la Stratégie
         turn_result = self.strategy.execute_turn(hand, battlefield)
 
         self.turns_simulated += 1
