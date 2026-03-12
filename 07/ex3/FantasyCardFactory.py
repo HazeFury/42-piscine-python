@@ -31,7 +31,7 @@ class FantasyCardFactory(CardFactory):
         )
 
     def create_themed_deck(self, size: int) -> Dict[str, List[Card]]:
-        themed_deck = {
+        themed_deck: Dict[str, List[Card]] = {
             "creatures": [],
             "spells": [],
             "artifacts": []
