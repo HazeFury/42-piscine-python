@@ -13,9 +13,8 @@ class AggressiveStrategy(GameStrategy):
         cards_played = []
         mana_used = 0
         damage = 0
-        max_mana = 5  # Fixé à 5 pour l'exemple de simulation
+        max_mana = 5
 
-        # On trie la main par coût (du moins cher au plus cher)
         hand.sort(key=lambda c: c.cost)
 
         for card in hand:
@@ -23,7 +22,6 @@ class AggressiveStrategy(GameStrategy):
                 cards_played.append(card.name)
                 mana_used += card.cost
 
-                # Calcul factice des dégâts pour la simulation
                 if getattr(card, "type", "") == "Creature":
                     damage += getattr(card, "attack", 0)
                 elif getattr(card, "type", "") == "Spell":
