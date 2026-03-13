@@ -4,19 +4,20 @@ import sys
 try:
     import pandas as pd  # type: ignore
     import numpy as np  # type: ignore
-    import matplotlib.pyplot as plt  # type: ignore
     import matplotlib  # type: ignore
+    import matplotlib.pyplot as plt  # type: ignore
     import requests  # type: ignore
 
-    DEPENDENCIES_LOADED = True
+    DEPENDENCIES_LOADED: bool = True
 except ImportError:
     DEPENDENCIES_LOADED = False
 
 
 def check_env() -> None:
-    python_path = sys.executable
+    """Check"""
+    python_path: str = sys.executable
 
-    print("Checking env:")
+    print("\nChecking env:")
     print(f"Executing from: {python_path}")
 
     if "pypoetry" in python_path or "poetry" in python_path.lower():
@@ -29,7 +30,7 @@ def check_env() -> None:
 
 def check_dependencies() -> None:
     """Vérifie l'état des dépendances et affiche un rapport."""
-    print("LOADING STATUS: Loading programs...\n")
+    print("\nLOADING STATUS: Loading programs...\n")
     print("Checking dependencies:")
     if not DEPENDENCIES_LOADED:
         print("\nCRITICAL ERROR: Matrix dependencies are missing!")
@@ -45,28 +46,26 @@ def check_dependencies() -> None:
 
 
 def analyze_matrix_data() -> None:
-    """Simule une analyse de données et génère un graphique."""
+    """Simule une analyse basique pour démontrer l'usage des dépendances."""
     print("\nAnalyzing Matrix data...")
     print("Processing 1000 data points...")
 
-    # Création de 1000 points de données aléatoires avec numpy
-    data = np.random.randn(1000)
-    # Transformation en tableau (DataFrame) avec pandas
-    df = pd.DataFrame(data, columns=["Matrix Signals"])
+    # 1. NUMPY : créer une liste de chiffres de 0 à 999.
+    # np.arange(1000) génère [0, 1, 2, ..., 999]
+    donnees_brutes: np.ndarray = np.arange(1000)
+
+    # 2. PANDAS : créer "tableau Excel" (DataFrame) avec une seule colonne
+    # qu'on appelle "Signal".
+    df: pd.DataFrame = pd.DataFrame(donnees_brutes, columns=["Signal"])
 
     print("Generating visualization...")
-    # Création d'un graphique avec matplotlib
-    plt.figure(figsize=(10, 6))
-    # On fait une somme cumulée (cumsum) pour avoir une jolie courbe qui
-    # monte/descend
-    plt.plot(
-        df["Matrix Signals"].cumsum(), color="green", label="Signal Strength"
-        )
-    plt.title("Matrix Network Signal Analysis")
-    plt.legend()
 
-    # Sauvegarde du fichier comme exigé par l'output
+    # 3. MATPLOTLIB : dessiner les valeurs de la colonne "Signal"
+    plt.plot(df["Signal"], color="green")
+
+    # Sauvegarde du graphique
     plt.savefig("matrix_analysis.png")
+
     print("\nAnalysis complete!")
     print("Results saved to: matrix_analysis.png")
 
@@ -76,8 +75,7 @@ def main() -> None:
     try:
         check_dependencies()
         check_env()
-        if DEPENDENCIES_LOADED:
-            analyze_matrix_data()
+        analyze_matrix_data()
     except Exception as e:
         print(f"An unexpected anomaly occurred in the Matrix: {e}")
 
