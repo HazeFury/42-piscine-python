@@ -14,7 +14,7 @@ except ImportError:
 
 
 def check_env() -> None:
-    """Check"""
+    """Check the environement used to run the script."""
     python_path: str = sys.executable
 
     print("\nChecking env:")
@@ -29,7 +29,7 @@ def check_env() -> None:
 
 
 def check_dependencies() -> None:
-    """Vérifie l'état des dépendances et affiche un rapport."""
+    """Checks the status of dependencies and displays a report."""
     print("\nLOADING STATUS: Loading programs...\n")
     print("Checking dependencies:")
     if not DEPENDENCIES_LOADED:
@@ -46,7 +46,7 @@ def check_dependencies() -> None:
 
 
 def analyze_matrix_data() -> None:
-    """Simule une analyse basique pour démontrer l'usage des dépendances."""
+    """Simulates a basic analysis to demonstrate the use of dependencies."""
     print("\nAnalyzing Matrix data...")
     print("Processing 1000 data points...")
 
@@ -71,7 +71,7 @@ def analyze_matrix_data() -> None:
 
 
 def main() -> None:
-    """Fonction principale d'orchestration."""
+    """Test importation and use of dependencies."""
     try:
         check_dependencies()
         check_env()
