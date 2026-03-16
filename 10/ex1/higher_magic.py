@@ -1,9 +1,5 @@
 from typing import Callable, Any
 
-# ==============================================================================
-# LES FONCTIONS D'ORDRE SUPÉRIEUR (HIGHER-ORDER FUNCTIONS)
-# ==============================================================================
-
 
 def spell_combiner(
         spell1: Callable[..., Any], spell2: Callable[..., Any]
@@ -11,9 +7,7 @@ def spell_combiner(
     """Combine two spells into a single new spell returning a tuple of
     both results."""
 
-    # Notre fameuse coquille universelle
     def combined_spell(*args: Any, **kwargs: Any) -> tuple[Any, Any]:
-        # On type explicitement les variables internes comme tu l'as demandé
         res1: Any = spell1(*args, **kwargs)
         res2: Any = spell2(*args, **kwargs)
 
@@ -71,8 +65,6 @@ def spell_sequence(
 
 
 # ==============================================================================
-# FONCTIONS DE BASE POUR LES TESTS (LES SORTS D'ORIGINE)
-# ==============================================================================
 
 def fireball(target: str, power: int) -> str:
     """Basic fireball spell."""
@@ -95,55 +87,53 @@ def is_boss(target: str, power: int) -> bool:
 
 
 # ==============================================================================
-# FONCTION PRINCIPALE DE DEMONSTRATION
-# ==============================================================================
 
 def main() -> None:
     """Demonstrate the usage of Higher Realm spells."""
 
-    # Données issues de ton generator.py
     test_values: list[int] = [11, 11, 10]
     test_targets: list[str] = ['Dragon', 'Goblin', 'Wizard', 'Knight']
 
     # ============= SPELL COMBINER =============
     print("============= SPELL COMBINER =============")
-    # On fabrique notre nouveau sort
     fire_and_heal: Callable[..., tuple[Any, Any]] = spell_combiner(
         fireball, heal
         )
 
-    # On l'utilise
     combo_result: tuple[Any, Any] = fire_and_heal("Dragon", test_values[0])
+
     print(f"Combined spell result: {combo_result[0]}, {combo_result[1]}")
 
     # ============= POWER AMPLIFIER =============
     print("\n============= POWER AMPLIFIER =============")
-    # On amplifie un sort de base qui renvoie un int
+
     mega_damage: Callable[..., int | float] = power_amplifier(raw_damage, 3)
 
     base_dmg: int = raw_damage(10)
     amped_dmg: int | float = mega_damage(10)
+
     print(f"Original: {base_dmg}, Amplified: {amped_dmg}")
 
     # ============= CONDITIONAL CASTER =============
     print("\n============= CONDITIONAL CASTER =============")
-    # On crée un sort qui ne fonctionne que sur les boss (Dragon)
+
     boss_only_spell: Callable[..., Any] = conditional_caster(is_boss, fireball)
 
     for target in test_targets[:2]:  # On teste sur Dragon puis Goblin
         result: Any = boss_only_spell(target, test_values[1])
+
         print(f"Targeting {target}: {result}")
 
     # ============= SPELL SEQUENCE =============
     print("\n============= SPELL SEQUENCE =============")
-    # On crée une routine de sorts
+
     routine: list[Callable[..., Any]] = [fireball, heal, fireball]
     barrage_spell: Callable[..., list[Any]] = spell_sequence(routine)
 
-    # On lance la séquence sur le Wizard
     sequence_results: list[Any] = barrage_spell(
         test_targets[2], test_values[2]
         )
+
     print("Casting sequence on Wizard:")
     for res in sequence_results:
         print(f" -> {res}")
