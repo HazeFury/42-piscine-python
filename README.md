@@ -32,10 +32,10 @@ ___
 | Module 04 : | File handling (open, read, write, with) | ![Grade](https://img.shields.io/badge/Grade-100%2F100-brightgreen) |
 | Module 05 : | Advanced OOP (polymorphism, method overriding, abstract class) | ![Grade](https://img.shields.io/badge/Grade-100%2F100-brightgreen) |
 | Module 06 : | Python’s import system | ![Grade](https://img.shields.io/badge/Grade-100%2F100-brightgreen) |
-| Module 07 : | Advanced OOP 2 (multiple inheritance, interfaces, design pattern, composition) | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
-| Module 08 : | Virtual Environments | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
-| Module 09 : | (Coming soon) | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
-| Module 10 : | (Coming soon) | ![Grade](https://img.shields.io/badge/Grade-0%2F100-red) |
+| Module 07 : | Advanced OOP 2 (multiple inheritance, interfaces, design pattern, composition) | ![Grade](https://img.shields.io/badge/Grade-100%2F100-brightgreen) |
+| Module 08 : | Virtual Environments (pip, poetry, env) | ![Grade](https://img.shields.io/badge/Grade-100%2F100-brightgreen) |
+| Module 09 : | Class validator (Pydantic) | ![Grade](https://img.shields.io/badge/Grade-100%2F100-brightgreen) |
+| Module 10 : | Functionnal Programming (lambda, High Order Function (HOF), closure, decorator) | ![Grade](https://img.shields.io/badge/Grade-100%2F100-brightgreen) |
 
   <br>
 </div>
