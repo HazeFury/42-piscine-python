@@ -7,6 +7,7 @@ from typing import Callable, Any
 # 1. REDUCE
 # ==============================================================================
 
+
 def spell_reducer(spells: list[int], operation: str) -> int:
     """Reduce a list of spell powers into a single value based on operation."""
     if not spells:
@@ -37,16 +38,19 @@ def enchantment(power: int, element: str, target: str) -> str:
     """Base generic spell to be specialized."""
     return f"Enchanting {target} with {element} magic at {power} power level"
 
-def partial_enchanter(base_enchantment: Callable[..., str]) -> dict[str, Callable[[str], str]]:
+
+def partial_enchanter(
+        base_enchantment: Callable[..., str]
+        ) -> dict[str, Callable[[str], str]]:
     """Create a dictionary of pre-configured enchantment spells."""
     fire_spell: Callable[[str], str] = partial(base_enchantment, 50, "Fire")
     ice_spell: Callable[[str], str] = partial(base_enchantment, 50, "Ice")
-    lightning_spell: Callable[[str], str] = partial(base_enchantment, 50, "Light")
-    
+    light_spell: Callable[[str], str] = partial(base_enchantment, 50, "Light")
+
     return {
         'fire_enchant': fire_spell,
         'ice_enchant': ice_spell,
-        'lightning_enchant': lightning_spell
+        'lightning_enchant': light_spell
     }
 
 
@@ -72,17 +76,20 @@ def memoized_fibonacci(n: int) -> int:
 def spell_dispatcher(target: Any) -> str:
     """Default fallback spell if the target type is unknown."""
     return "Casting generic spell on mysterious entity" \
-          f" of type: {type(target).__name__}"
+           f" of type: {type(target).__name__}"
+
 
 @spell_dispatcher.register(str)
 def _(target: str) -> str:
     """Specialized spell for String targets."""
     return f"Casting verbal spell on {target}"
 
+
 @spell_dispatcher.register(int)
 def _(target: int) -> str:
     """Specialized spell for Integer targets."""
     return f"Casting physical spell with {target} raw damage"
+
 
 @spell_dispatcher.register(list)
 def _(target: list[Any]) -> str:
@@ -96,7 +103,7 @@ def _(target: list[Any]) -> str:
 
 def main() -> None:
     """Demonstrate the usage of Ancient Library artifacts."""
-    
+
     # ============= REDUCE =============
     print("============= SPELL REDUCER =============")
     print("# Testing spell reducer on a list...")
@@ -106,27 +113,25 @@ def main() -> None:
     print(f"Product (multiply): {spell_reducer(power_list, 'multiply')}")
     print(f"Max power: {spell_reducer(power_list, 'max')}")
 
-
     # ============= PARTIAL =============
     print("\n============= PARTIAL ENCHANTER =============")
     print("# Testing partial enchanter function...")
     grimoire: dict[str, Callable[[str], str]] = partial_enchanter(enchantment)
-    
+
     print(grimoire['fire_enchant']("Sword"))
     print(grimoire['ice_enchant']("Shield"))
     print(grimoire['lightning_enchant']("Staff"))
 
-
     # ============= LRU CACHE =============
     print("\n============= LRU CACHE =============")
     print("# Testing Fibonacci sequence with cache...")
-    
+
     start_time: float = time.time()
     result1: int = memoized_fibonacci(100)
     end_time: float = time.time()
     print(f"First call (fibonacci 100): {result1}")
     print(f"Time taken (Computing): {end_time - start_time:.8f} seconds")
-    
+
     start_time2: float = time.time()
     result2: int = memoized_fibonacci(100)
     end_time2: float = time.time()
@@ -134,11 +139,10 @@ def main() -> None:
     print(f"Time taken (Cached): {end_time2 - start_time2:.8f} seconds")
     print("-> That's the power of memoization!")
 
-
     # ============= SINGLEDISPATCH =============
     print("\n============= SINGLEDISPATCH =============")
     print("# Testing dispatch spell with different types...")
-    
+
     print(spell_dispatcher("The Dragon"))
     print(spell_dispatcher(42))
     print(spell_dispatcher(["Goblin", "Orc"]))

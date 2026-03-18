@@ -1,5 +1,6 @@
 from typing import Any
 
+
 # ==============================================================================
 #   ARTIFACT SORTER
 # ==============================================================================
@@ -11,6 +12,7 @@ def artifact_sorter(artifacts: list[dict[str, Any]]) -> list[dict[str, Any]]:
     except Exception as e:
         print(f"Error sorting artifacts: {e}")
         return []
+
 
 # ==============================================================================
 #   POWER FILTER
@@ -25,6 +27,7 @@ def power_filter(
     except Exception as e:
         print(f"Error filtering mages: {e}")
         return []
+
 
 # ==============================================================================
 #   SPELL TRANFORMER
@@ -63,6 +66,7 @@ def mage_stats(mages: list[dict[str, Any]]) -> dict[str, Any]:
     except Exception as e:
         print(f"Error calculating stats: {e}")
         return {'max_power': 0, 'min_power': 0, 'avg_power': 0.0}
+
 
 # ==============================================================================
 #   MAIN
