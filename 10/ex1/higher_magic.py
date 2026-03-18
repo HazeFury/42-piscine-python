@@ -1,5 +1,6 @@
 from typing import Callable, Any
 
+
 # ==============================================================================
 #   SPELL COMBINER
 # ==============================================================================
@@ -18,6 +19,7 @@ def spell_combiner(
 
     return combined_spell
 
+
 # ==============================================================================
 #   POWER AMPLIFIER
 # ==============================================================================
@@ -34,6 +36,7 @@ def power_amplifier(
         return amplified_power
 
     return amplified_spell
+
 
 # ==============================================================================
 #   CONDITIONAL CASTER
@@ -53,6 +56,7 @@ def conditional_caster(
         return "Spell fizzled"
 
     return conditional_spell
+
 
 # ==============================================================================
 #   SPELL SEQUENCE
