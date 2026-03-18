@@ -1,5 +1,9 @@
 from typing import Callable, Any
 
+# ==============================================================================
+#   MAGE COUNTER
+# ==============================================================================
+
 def mage_counter() -> Callable[[], int]:
     """Create a closure that counts how many times it's been called."""
     count: int = 0
@@ -11,6 +15,9 @@ def mage_counter() -> Callable[[], int]:
         
     return counter
 
+# ==============================================================================
+#   SPELL ACCUMULATOR
+# ==============================================================================
 
 def spell_accumulator(initial_power: int) -> Callable[[int], int]:
     """Create a power accumulator closure starting from initial_power."""
@@ -23,6 +30,9 @@ def spell_accumulator(initial_power: int) -> Callable[[int], int]:
         
     return accumulator
 
+# ==============================================================================
+#   ENCHANTEMENT FACTORY
+# ==============================================================================
 
 def enchantment_factory(enchantment_type: str) -> Callable[[str], str]:
     """Create an enchantment function using the provided enchantment_type."""
@@ -32,6 +42,9 @@ def enchantment_factory(enchantment_type: str) -> Callable[[str], str]:
         
     return apply_enchantment
 
+# ==============================================================================
+#   MEMORY VALUT
+# ==============================================================================
 
 def memory_vault() -> dict[str, Callable[..., Any]]:
     """Create a memory management system with private storage closure."""
@@ -48,6 +61,9 @@ def memory_vault() -> dict[str, Callable[..., Any]]:
         'recall': recall
     }
 
+# ==============================================================================
+#   MAIN
+# ==============================================================================
 
 def main() -> None:
     """Demonstrate the usage of Memory Depths closures."""
