@@ -1,5 +1,8 @@
 from typing import Callable, Any
 
+# ==============================================================================
+#   SPELL COMBINER
+# ==============================================================================
 
 def spell_combiner(
         spell1: Callable[..., Any], spell2: Callable[..., Any]
@@ -15,6 +18,9 @@ def spell_combiner(
 
     return combined_spell
 
+# ==============================================================================
+#   POWER AMPLIFIER
+# ==============================================================================
 
 def power_amplifier(
         base_spell: Callable[..., int | float], multiplier: int
@@ -29,6 +35,9 @@ def power_amplifier(
 
     return amplified_spell
 
+# ==============================================================================
+#   CONDITIONAL CASTER
+# ==============================================================================
 
 def conditional_caster(
         condition: Callable[..., bool], spell: Callable[..., Any]
@@ -45,6 +54,9 @@ def conditional_caster(
 
     return conditional_spell
 
+# ==============================================================================
+#   SPELL SEQUENCE
+# ==============================================================================
 
 def spell_sequence(
         spells: list[Callable[..., Any]]
@@ -64,6 +76,8 @@ def spell_sequence(
     return sequence_spell
 
 
+# ==============================================================================
+#   TEST FUNCTIONS
 # ==============================================================================
 
 def fireball(target: str, power: int) -> str:
@@ -86,6 +100,8 @@ def is_boss(target: str, power: int) -> bool:
     return target == "Dragon"
 
 
+# ==============================================================================
+#   MAIN
 # ==============================================================================
 
 def main() -> None:

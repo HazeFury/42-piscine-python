@@ -1,5 +1,8 @@
 from typing import Any
 
+# ==============================================================================
+#   ARTIFACT SORTER
+# ==============================================================================
 
 def artifact_sorter(artifacts: list[dict[str, Any]]) -> list[dict[str, Any]]:
     """Sort magical artifacts by power level in descending order."""
@@ -9,6 +12,9 @@ def artifact_sorter(artifacts: list[dict[str, Any]]) -> list[dict[str, Any]]:
         print(f"Error sorting artifacts: {e}")
         return []
 
+# ==============================================================================
+#   POWER FILTER
+# ==============================================================================
 
 def power_filter(
         mages: list[dict[str, Any]], min_power: int
@@ -20,6 +26,9 @@ def power_filter(
         print(f"Error filtering mages: {e}")
         return []
 
+# ==============================================================================
+#   SPELL TRANFORMER
+# ==============================================================================
 
 def spell_transformer(spells: list[str]) -> list[str]:
     """Transform a list of spell names by adding '*' prefix and suffix."""
@@ -29,6 +38,10 @@ def spell_transformer(spells: list[str]) -> list[str]:
         print(f"Error transforming spells: {e}")
         return []
 
+
+# ==============================================================================
+#   MAGE STATS
+# ==============================================================================
 
 def mage_stats(mages: list[dict[str, Any]]) -> dict[str, Any]:
     """Calculate max, min, and average power levels of a list of mages."""
@@ -51,9 +64,13 @@ def mage_stats(mages: list[dict[str, Any]]) -> dict[str, Any]:
         print(f"Error calculating stats: {e}")
         return {'max_power': 0, 'min_power': 0, 'avg_power': 0.0}
 
+# ==============================================================================
+#   MAIN
+# ==============================================================================
 
 def main() -> None:
     """Demonstrate the usage of Lambda Sanctum spells."""
+
     artifacts = [
         {'name': 'Ice Wand', 'power': 81, 'type': 'weapon'},
         {'name': 'Lightning Rod', 'power': 66, 'type': 'armor'},
